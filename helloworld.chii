@@ -1,0 +1,11 @@
+$fn sin(double) double;
+$fn cos(double) double;
+$fn printf($immutable(int8 *), ...) int;
+
+$fn main()
+{
+	printf("Hello, %s world!\n", "fantastic Chii");
+	printf("The sine of the cosine of %f radians is %f.\n", 2.0f, sin(cos(2.0f)));
+	
+	$return;
+}
