@@ -17,4 +17,5 @@ $ node chew.js -d helloworld.chii | lli
 And, to compile it and run, do:
 
 $ node chew.js -d helloworld.chii | llc | gcc -o helloworld -x assembler -
+
 $ ./helloworld
