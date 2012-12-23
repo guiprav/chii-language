@@ -1,3 +1,7 @@
+Warning: This project is *not* actively under development. It's just here so I don't forget the ideas I had for it.
+
+* * *
+
 Chew - A Chii Language compiler written in JavaScript
 --------------------------------------------------------
 
