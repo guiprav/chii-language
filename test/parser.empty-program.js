@@ -18,9 +18,9 @@ describe
 		);
 		it
 		(
-			"should produce an AST node with 0 child statements", function()
+			"should produce an AST node with 0 child expressions", function()
 			{
-				assert.deepEqual(program.statements.length, 0);
+				assert.deepEqual(program.expressions.length, 0);
 			}
 		);
 	}
