@@ -2,6 +2,7 @@ start
 	= ''
 	{
 		return {
-			type: "Program"
+			type: "Program",
+			statements: []
 		};
 	}
