@@ -18,6 +18,7 @@
     "url": "https://github.com/n2liquid/Chii-Language/issues"
   },
   "dependencies": {
-    "mocha": "~1.16.2"
+    "mocha": "~1.16.2",
+    "pegjs": "~0.8.0"
   }
 }
