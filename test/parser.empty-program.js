@@ -16,5 +16,12 @@ describe
 				assert.deepEqual(program.type, "Program");
 			}
 		);
+		it
+		(
+			"should produce an AST node with 0 child statements", function()
+			{
+				assert.deepEqual(program.statements.length, 0);
+			}
+		);
 	}
 );
