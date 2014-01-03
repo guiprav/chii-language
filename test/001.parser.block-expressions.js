@@ -24,5 +24,13 @@ describe
 				assert.deepEqual(block.type, "Block");
 			}
 		);
+		it
+		(
+			"should produce a Block with 0 child expressions", function()
+			{
+				var block = parse_block();
+				assert.deepEqual(block.expressions.length, 0);
+			}
+		);
 	}
 );
