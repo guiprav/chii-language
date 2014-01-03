@@ -3,6 +3,6 @@ start
 	{
 		return {
 			type: "Program",
-			statements: []
+			expressions: []
 		};
 	}
