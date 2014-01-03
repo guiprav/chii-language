@@ -1,23 +1,12 @@
 Program
-	= literal:BooleanLiteral
+	= expression:Expression
 	{
 		return {
 			type: "Program",
 			code_block:
 			{
 				type: "Block",
-				expressions: [literal]
-			}
-		};
-	}
-	/ block:Block
-	{
-		return {
-			type: "Program",
-			code_block:
-			{
-				type: "Block",
-				expressions: [block]
+				expressions: [expression]
 			}
 		};
 	}
@@ -32,6 +21,9 @@ Program
 			}
 		};
 	}
+Expression
+	= BooleanLiteral
+	/ Block
 Block
 	= '{}'
 	{
