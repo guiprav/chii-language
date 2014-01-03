@@ -7,17 +7,13 @@ describe
 (
 	'Empty program', function()
 	{
+		var source_code = '';
+		var program = parser.parse(source_code);
 		it
 		(
-			"should produce the right AST", function()
+			"should produce an AST node of type \"Program\"", function()
 			{
-				var source_code = '';
-				var produced_ast = parser.parse(source_code);
-				var expected_ast =
-				{
-					type: "Program"
-				};
-				assert.deepEqual(produced_ast, expected_ast);
+				assert.deepEqual(program.type, "Program");
 			}
 		);
 	}
