@@ -3,6 +3,9 @@ start
 	{
 		return {
 			type: "Program",
-			expressions: []
+			code_block:
+			{
+				type: "Block"
+			}
 		};
 	}
