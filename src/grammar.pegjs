@@ -5,7 +5,8 @@ start
 			type: "Program",
 			code_block:
 			{
-				type: "Block"
+				type: "Block",
+				expressions: []
 			}
 		};
 	}
