@@ -25,6 +25,7 @@ Block
 	= '{}'
 	{
 		return {
-			type: "Block"
+			type: "Block",
+			expressions: []
 		};
 	}
