@@ -6,10 +6,19 @@ function load_parser()
 	var grammar = fs.readFileSync(__dirname + '/../src/grammar.pegjs', { encoding: 'utf8' });
 	return peg.buildParser(grammar);
 }
-function parse_block()
+function parse_block(expressions)
 {
+	expressions = expressions || [];
 	var parser = load_parser();
-	var source_code = '{}';
+	var source_code;
+	if(expressions.length === 0)
+	{
+		source_code = '{}';
+	}
+	else
+	{
+		source_code = '{' + expressions.join(';') + ';}';
+	}
 	return parser.parse(source_code).code_block.expressions[0];
 }
 describe
@@ -32,5 +41,26 @@ describe
 				assert.deepEqual(block.expressions.length, 0);
 			}
 		);
+	}
+);
+describe
+(
+	'Block expression with children', function()
+	{
+		it
+		(
+			"should hold its children", function()
+			{
+				var block = parse_block(['true']);
+				assert.deepEqual(block.expressions.length, 1);
+				assert.deepEqual
+				(
+					block.expressions[0],
+					{
+						type: "Boolean Literal"
+					}
+				);
+			}
+		)
 	}
 );
