@@ -1,5 +1,5 @@
-Chii Programming Language
-=========================
+Chii Language
+=============
 
 This repository contains grammars, compilers, and other software related to the
 [Chii Programming Language.](https://n2liquid.wordpress.com/category/chii-language/)
