@@ -1,18 +1,26 @@
 var assert = require('assert');
 var fs = require('fs');
 var peg = require('pegjs');
-var grammar = fs.readFileSync(__dirname + '/../src/grammar.pegjs', { encoding: 'utf8' });
-var parser = peg.buildParser(grammar);
+function load_parser()
+{
+	var grammar = fs.readFileSync(__dirname + '/../src/grammar.pegjs', { encoding: 'utf8' });
+	return peg.buildParser(grammar);
+}
+function parse_block()
+{
+	var parser = load_parser();
+	var source_code = '{}';
+	return parser.parse(source_code).code_block.expressions[0];
+}
 describe
 (
 	'Empty block expression', function()
 	{
-		var source_code = '{}';
-		var block = parser.parse(source_code).code_block.expressions[0];
 		it
 		(
 			"should produce an AST node of type \"Block\"", function()
 			{
+				var block = parse_block();
 				assert.deepEqual(block.type, "Block");
 			}
 		);
