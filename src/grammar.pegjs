@@ -25,15 +25,17 @@ Expression
 	= BooleanLiteral
 	/ Block
 Block
-	= '{}'
+	= '{' expressions:BlockChildrenExpressions '}'
 	{
 		return {
 			type: "Block",
-			expressions: []
+			expressions: expressions
 		};
 	}
+BlockChildrenExpressions
+	= (expression:Expression ';' { return expression })*
 BooleanLiteral
-	= 'true;'
+	= 'true'
 	{
 		return {
 			type: "Boolean Literal"
