@@ -18,6 +18,14 @@ describe
 		);
 		it
 		(
+			"should produce a Program node with a code block", function()
+			{
+				assert(program.code_block);
+				assert.deepEqual(program.code_block.type, 'Block');
+			}
+		);
+		it
+		(
 			"should produce an AST node with 0 child expressions", function()
 			{
 				assert.deepEqual(program.expressions.length, 0);
